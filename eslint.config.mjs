@@ -7,6 +7,7 @@ export default antfu({
   javascript: true,
   rules: {
     'no-console': 'off',
+    'n/prefer-global/process': 'off',
   },
   stylistic: {
     indent: 2, // 4, or 'tab'
