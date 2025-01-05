@@ -8,6 +8,7 @@ export default antfu({
   rules: {
     'no-console': 'off',
     'n/prefer-global/process': 'off',
+    '@typescript-eslint/no-require-imports': 'off',
   },
   stylistic: {
     indent: 2, // 4, or 'tab'

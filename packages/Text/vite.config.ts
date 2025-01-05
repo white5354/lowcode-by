@@ -1,12 +1,10 @@
-import react from '@vitejs/plugin-react'
+import path from 'node:path'
 import { defineConfig } from 'vite'
 
-// https://vite.dev/config/
 export default defineConfig({
-  plugins: [react()],
   build: {
     lib: {
-      entry: './src/index.tsx',
+      entry: path.resolve(__dirname, 'index.tsx'),
       name: 'ByText',
       formats: ['umd'],
       fileName: 'by-text',
@@ -18,7 +16,13 @@ export default defineConfig({
           'react': 'React',
           'react-dom': 'ReactDOM',
         },
+        format: 'umd',
+        name: 'ByText',
       },
     },
+  },
+  define: {
+    'process.env': {},
+    'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
   },
 })
