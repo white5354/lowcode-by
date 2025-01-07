@@ -11,14 +11,15 @@ interface IMaterialData {
 export interface IMaterial extends IMaterialData {
   /* 物料名称 */
   name: string
+  /* 物料标题 */
+  title: string
   /* 物料类型 */
   type: string
   /* 分类 */
   category: ICategory
-  /* 物料描述 */
   /* 物料唯一标识 */
   id: string
-  /* 版本 */
+  thumbnail: string
   data: IMaterialData[]
 }
 

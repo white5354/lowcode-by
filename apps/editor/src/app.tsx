@@ -1,18 +1,18 @@
-import React from 'react'
-
-import Center from './components/center'
-import Header from './components/header'
-import Left from './components/left'
-import Right from './components/right'
-import UmdComponent from './UmdComponed'
-import { loadScript } from './utils'
-import './app.css'
+import type { IMaterial } from '@by/shared'
+import { Suspense } from 'react'
+import { useRoutes } from 'react-router-dom'
+// TODO: 需要修改,配置不生效，但是约定式路由现在是能使用的
+import routes from '~react-pages'
+import BasicLayout from './components/BasicLayout'
+import './app.less'
 
 function App() {
   return (
-    <div>
-      <UmdComponent url="/by-text.umd.js" />
-    </div>
+    <Suspense fallback={<p>Loading...</p>}>
+      <BasicLayout>
+        {useRoutes(routes)}
+      </BasicLayout>
+    </Suspense>
   )
 }
 

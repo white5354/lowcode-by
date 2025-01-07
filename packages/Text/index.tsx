@@ -1,7 +1,7 @@
 import React from 'react'
 
-function Demo() {
+function LcText() {
   return <div>demo...</div>
 }
 
-export default Demo
+export default LcText

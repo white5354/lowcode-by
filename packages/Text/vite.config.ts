@@ -1,13 +1,14 @@
 import path from 'node:path'
 import { defineConfig } from 'vite'
+import pkg from './package.json'
 
 export default defineConfig({
   build: {
     lib: {
       entry: path.resolve(__dirname, 'index.tsx'),
-      name: 'ByText',
+      name: 'LcText',
       formats: ['umd'],
-      fileName: 'by-text',
+      fileName: `lc-text.${pkg.version}`,
     },
     rollupOptions: {
       external: ['react', 'react-dom'],
@@ -17,7 +18,7 @@ export default defineConfig({
           'react-dom': 'ReactDOM',
         },
         format: 'umd',
-        name: 'ByText',
+        name: 'LcText',
       },
     },
   },

@@ -13,11 +13,9 @@ function UmdComponent({ url }) {
     }
 
     setIsLoading(true)
-    console.log('开始加载脚本:', url)
 
     loadScript(url)
       .then(() => {
-        console.log('脚本加载完成，window.ByText:', (window as any).ByText)
         const component = (window as any).ByText
         if (!component) {
           throw new Error('ByText is not found')
